@@ -53,7 +53,7 @@ def down_it(item):
 			time.sleep(.1)
 	except socket.error as e:
 		print("\033[91mno connection! server maybe down\033[0m")
-		#print("\033[91m",e,"\033[0m")
+		
 		time.sleep(.1)
 
 
@@ -147,16 +147,16 @@ if __name__ == '__main__':
 	while True:
 		for i in range(int(thr)):
 			t = threading.Thread(target=dos)
-			t.daemon = True  # if thread is exist, it dies
+			t.daemon = True  
 			t.start()
 			t2 = threading.Thread(target=dos2)
-			t2.daemon = True  # if thread is exist, it dies
+			t2.daemon = True  
 			t2.start()
 		start = time.time()
 		#tasking
 		item = 0
 		while True:
-			if (item>1800): # for no memory crash
+			if (item>1800): 
 				item=0
 				time.sleep(.1)
 			item = item + 1
